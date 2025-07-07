@@ -1,0 +1,97 @@
+{
+  "expo": {
+    "name": "buunpo",
+    "slug": "buunpo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "statusBarStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.buunpo",
+      "statusBarStyle": "light",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Este app precisa de acesso à câmera para funcionalidades de foto e vídeo.",
+        "NSMicrophoneUsageDescription": "Este app precisa de acesso ao microfone para funcionalidades de áudio.",
+        "NSPhotoLibraryUsageDescription": "Este app precisa de acesso à galeria para salvar e carregar fotos."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "statusBarStyle": "light",
+      "package": "com.buunpo",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_MEDIA_LOCATION",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "VIBRATE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "oneSignalAppId": "bfb1ab2e-8df0-49dd-abc9-28d1b0213ee8",
+      "eas": {
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "OneSignalNotificationServiceExtension",
+                  "bundleIdentifier": "com.buunpo.OneSignalNotificationServiceExtension",
+                  "entitlements": {
+                    "com.apple.security.application-groups": [
+                      "group.com.buunpo.onesignal"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "projectId": "85c09716-a09a-4a0e-aa9d-e10978e9f99f"
+      }
+    },
+    "plugins": [
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "development"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permitir acesso à câmera para tirar fotos e gravar vídeos."
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Permitir acesso ao microfone para gravar áudio."
+        }
+      ]
+    ]
+  }
+}
